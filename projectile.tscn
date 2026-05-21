@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b130bumwaacmj"]
+
+[ext_resource type="Texture2D" uid="uid://bupus05khmhu4" path="res://Rangers arts/Forest_Ranger_1/PNG/Vector Parts/Arrow.png" id="1_a85iw"]
+[ext_resource type="Script" uid="uid://mxhivy8a7n0d" path="res://projectile.gd" id="1_qxf0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxf0c"]
+size = Vector2(40.4375, 12.3125)
+
+[node name="Projectile" type="Area2D" unique_id=1870557556]
+script = ExtResource("1_qxf0c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1199582998]
+rotation = -3.1415927
+scale = Vector2(0.13564011, -0.16395222)
+texture = ExtResource("1_a85iw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1358127584]
+position = Vector2(0, -1.15625)
+shape = SubResource("RectangleShape2D_qxf0c")

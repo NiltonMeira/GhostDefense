@@ -2,7 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://68ylu8x6hc5g" path="res://background.png" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://by2d2mdsaaepb" path="res://path_follow_2d.gd" id="2_feb5d"]
+[ext_resource type="Script" uid="uid://dmsv8ye56rba1" path="res://skeleton.gd" id="3_eow3j"]
 [ext_resource type="Texture2D" uid="uid://ckhhxyrn1cixa" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_000.png" id="3_fc0e3"]
+[ext_resource type="Script" uid="uid://cqyg2a5gqohrb" path="res://hero.gd" id="4_7jktm"]
+[ext_resource type="Texture2D" uid="uid://dvxhfveooqi3f" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle/0_Forest_Ranger_Idle_000.png" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://b130bumwaacmj" path="res://projectile.tscn" id="5_ryrav"]
 
 [sub_resource type="Curve2D" id="Curve2D_7jktm"]
 _data = {
@@ -13,6 +17,14 @@ point_count = 43
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryrav"]
 radius = 16.0
 height = 46.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_feb5d"]
+font_size = 80
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eow3j"]
+radius = 23.0
+height = 56.0
 
 [node name="Game" type="Node2D" unique_id=1972926176]
 
@@ -33,14 +45,43 @@ rotates = false
 loop = false
 script = ExtResource("2_feb5d")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Path2D/PathFollow2D" unique_id=41393071]
+[node name="Skeleton" type="CharacterBody2D" parent="Path2D/PathFollow2D" unique_id=41393071]
 rotation = -0.83775806
+script = ExtResource("3_eow3j")
 
-[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/CharacterBody2D" unique_id=965327568]
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/Skeleton" unique_id=965327568]
 position = Vector2(5.9829407, -8.012775)
 scale = Vector2(0.08555546, 0.08333333)
 texture = ExtResource("3_fc0e3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/CharacterBody2D" unique_id=1904852489]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Skeleton" unique_id=1904852489]
 position = Vector2(4.9914703, -4.0106506)
 shape = SubResource("CapsuleShape2D_ryrav")
+
+[node name="game_over" type="CanvasLayer" parent="." unique_id=59859463]
+visible = false
+
+[node name="Label" type="Label" parent="game_over" unique_id=208777291]
+offset_left = 327.0
+offset_top = 258.0
+offset_right = 785.0
+offset_bottom = 368.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_feb5d")
+uppercase = true
+
+[node name="Hero" type="CharacterBody2D" parent="." unique_id=1453632431]
+script = ExtResource("4_7jktm")
+projectile_scene = ExtResource("5_ryrav")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hero" unique_id=1220511923]
+position = Vector2(501, 193.00003)
+scale = Vector2(-0.12603511, 0.09791033)
+texture = ExtResource("4_fc0e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hero" unique_id=1185538705]
+position = Vector2(501, 199)
+shape = SubResource("CapsuleShape2D_eow3j")
+
+[node name="ShootingPoint" type="Marker2D" parent="Hero" unique_id=1955645817]
+position = Vector2(499, 214)

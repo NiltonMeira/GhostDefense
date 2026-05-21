@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://w2bgtxeo7nm4"]
+
+[ext_resource type="Script" uid="uid://by2d2mdsaaepb" path="res://path_follow_2d.gd" id="1_ppgkr"]
+[ext_resource type="Script" uid="uid://dmsv8ye56rba1" path="res://skeleton.gd" id="2_o44yk"]
+[ext_resource type="Texture2D" uid="uid://ckhhxyrn1cixa" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_000.png" id="3_637nb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryrav"]
+radius = 16.0
+height = 46.0
+
+[node name="PathFollow2D" type="PathFollow2D" unique_id=242063834]
+rotation = 0.8398896
+rotates = false
+loop = false
+script = ExtResource("1_ppgkr")
+
+[node name="Skeleton" type="CharacterBody2D" parent="." unique_id=48893616]
+rotation = -0.83775806
+script = ExtResource("2_o44yk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton" unique_id=183738355]
+position = Vector2(5.9829407, -8.012775)
+scale = Vector2(0.08555546, 0.08333333)
+texture = ExtResource("3_637nb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton" unique_id=1645100022]
+position = Vector2(4.9914703, -4.0106506)
+shape = SubResource("CapsuleShape2D_ryrav")

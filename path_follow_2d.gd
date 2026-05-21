@@ -1,7 +1,11 @@
 extends PathFollow2D
 
-const SPEED = 200.0
+const SPEED = 100.0
 var reached_end = false
+
+func _ready():
+	progress = 0
+	add_to_group("Enemy")
 
 func _process(delta):
 	if reached_end:

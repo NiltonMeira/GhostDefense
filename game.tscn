@@ -2,9 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://68ylu8x6hc5g" path="res://background.png" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://bu06hplljx8y4" path="res://game.gd" id="1_j5wjh"]
-[ext_resource type="Script" uid="uid://by2d2mdsaaepb" path="res://path_follow_2d.gd" id="2_feb5d"]
-[ext_resource type="Script" uid="uid://dmsv8ye56rba1" path="res://skeleton.gd" id="3_eow3j"]
-[ext_resource type="Texture2D" uid="uid://ckhhxyrn1cixa" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_000.png" id="3_fc0e3"]
+[ext_resource type="Script" uid="uid://kjqyd7qoye3m" path="res://enemy_spawner.gd" id="2_eow3j"]
+[ext_resource type="PackedScene" uid="uid://w2bgtxeo7nm4" path="res://Skeleton.tscn" id="3_ryrav"]
 [ext_resource type="Script" uid="uid://cqyg2a5gqohrb" path="res://hero.gd" id="4_7jktm"]
 [ext_resource type="Texture2D" uid="uid://dvxhfveooqi3f" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle/0_Forest_Ranger_Idle_000.png" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://b130bumwaacmj" path="res://projectile.tscn" id="5_ryrav"]
@@ -14,10 +13,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 112.999954, 86, 0, 0, 0, 0, 138.99995, 115, 0, 0, 0, 0, 143.99995, 149, 0, 0, 0, 0, 157.99995, 188, 0, 0, 0, 0, 196.99997, 214, 0, 0, 0, 0, 241.99997, 219, 0, 0, 0, 0, 293.99997, 225, 0, 0, 0, 0, 352.99997, 220, 0, 0, 0, 0, 390, 207, 0, 0, 0, 0, 419, 180, 0, 0, 0, 0, 437, 154, 0, 0, 0, 0, 464, 135, 0, 0, 0, 0, 498, 123, 0, 0, 0, 0, 530, 125, 0, 0, 0, 0, 556, 141, 0, 0, 0, 0, 569, 170, 0, 0, 0, 0, 572, 196, 0, 0, 0, 0, 588, 214, 0, 0, 0, 0, 611, 225, 0, 0, 0, 0, 643, 225, 0, 0, 0, 0, 678, 227, 0, 0, 0, 0, 701, 230, 0, 0, 0, 0, 730, 243, 0, 0, 0, 0, 740, 259, 0, 0, 0, 0, 743, 286, 0, 0, 0, 0, 748, 309, 0, 0, 0, 0, 757, 326, 0, 0, 0, 0, 782.00006, 339, 0, 0, 0, 0, 814.00006, 347, 0, 0, 0, 0, 852.00006, 352, 0, 0, 0, 0, 881.00006, 359, 0, 0, 0, 0, 901.00006, 368, 0, 0, 0, 0, 912.00006, 383, 0, 0, 0, 0, 922.00006, 402, 0, 0, 0, 0, 926.00006, 425, 0, 0, 0, 0, 917.00006, 452, 0, 0, 0, 0, 914.00006, 471, 0, 0, 0, 0, 922.00006, 497, 0, 0, 0, 0, 935.00006, 513, 0, 0, 0, 0, 951.00006, 528, 0, 0, 0, 0, 973.00006, 549, 0, 0, 0, 0, 996.00006, 558, 0, 0, 0, 0, 1018.00006, 573)
 }
 point_count = 43
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryrav"]
-radius = 16.0
-height = 46.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eow3j"]
 radius = 23.0
@@ -34,6 +29,10 @@ font_color = Color(0, 0.5019608, 0, 1)
 [node name="Game" type="Node2D" unique_id=1972926176]
 script = ExtResource("1_j5wjh")
 
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=1175435410]
+script = ExtResource("2_eow3j")
+enemy_scene = ExtResource("3_ryrav")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163103027]
 position = Vector2(576, 325.5)
 scale = Vector2(0.75130206, 0.64160156)
@@ -44,25 +43,8 @@ position = Vector2(6.1035156e-05, 0)
 scale = Vector2(0.99999994, 1)
 curve = SubResource("Curve2D_7jktm")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=743624496]
+[node name="Enemy" parent="Path2D" unique_id=242063834 instance=ExtResource("3_ryrav")]
 position = Vector2(112.999954, 86)
-rotation = 0.8398896
-rotates = false
-loop = false
-script = ExtResource("2_feb5d")
-
-[node name="Skeleton" type="CharacterBody2D" parent="Path2D/PathFollow2D" unique_id=41393071]
-rotation = -0.83775806
-script = ExtResource("3_eow3j")
-
-[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/Skeleton" unique_id=965327568]
-position = Vector2(5.9829407, -8.012775)
-scale = Vector2(0.08555546, 0.08333333)
-texture = ExtResource("3_fc0e3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Skeleton" unique_id=1904852489]
-position = Vector2(4.9914703, -4.0106506)
-shape = SubResource("CapsuleShape2D_ryrav")
 
 [node name="Hero" type="CharacterBody2D" parent="." unique_id=1453632431]
 script = ExtResource("4_7jktm")

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var projectile_scene: PackedScene
 @export var atack_speed: float = 2.0
+@export var attack_range: float = 200.0
 
 @onready var shooting_point = $ShootingPoint
 
@@ -24,14 +25,17 @@ func shoot():
 	if enemy == null:
 		return
 
-	var direction = (enemy.global_position - shooting_point.global_position).normalized()
+	var direction = (
+		enemy.global_position - shooting_point.global_position
+	).normalized()
 
 	var projectile = projectile_scene.instantiate()
+
 	projectile.global_position = shooting_point.global_position
 	projectile.direction = direction
-	projectile.rotation = direction.angle()
+	projectile.rotation = direction.angle() + deg_to_rad(180)
 
-	get_tree().current_scene.add_child(projectile)
+	get_tree().current_scene.call_deferred("add_child", projectile)
 
 func get_target():
 	var enemies = get_tree().get_nodes_in_group("Enemy")
@@ -42,9 +46,18 @@ func get_target():
 	for enemy in enemies:
 		if !is_instance_valid(enemy):
 			continue
+		
+		var distance = shooting_point.global_position.distance_to(enemy.global_position)
+		
+		if distance > attack_range:
+			continue
 
 		if enemy.progress > best_progress:
 			best_progress = enemy.progress
 			best_enemy = enemy
 
 	return best_enemy
+	
+func _draw():
+	var center = shooting_point.position
+	draw_circle(center, attack_range, Color(1, 0, 0, 0.2))

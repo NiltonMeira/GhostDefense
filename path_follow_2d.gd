@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-const SPEED = 100.0
+@export var speed: float = 50.0
 var reached_end = false
 
 func _ready():
@@ -8,10 +8,7 @@ func _ready():
 	add_to_group("Enemy")
 
 func _process(delta):
-	if reached_end:
-		return
-
-	progress += SPEED * delta
+	progress += speed * delta
 
 	if progress_ratio >= 1.0:
 		reached_end = true

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bea2mitwnu2lb"]
+
+[ext_resource type="Script" uid="uid://cqyg2a5gqohrb" path="res://hero.gd" id="1_u1ipw"]
+[ext_resource type="PackedScene" uid="uid://b130bumwaacmj" path="res://projectile.tscn" id="2_xpv8o"]
+[ext_resource type="Texture2D" uid="uid://dvxhfveooqi3f" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle/0_Forest_Ranger_Idle_000.png" id="3_iyggp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eow3j"]
+radius = 23.0
+height = 56.0
+
+[node name="Hero" type="CharacterBody2D" unique_id=797298957]
+script = ExtResource("1_u1ipw")
+projectile_scene = ExtResource("2_xpv8o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1807728874]
+scale = Vector2(-0.12603511, 0.09791033)
+texture = ExtResource("3_iyggp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1789152850]
+shape = SubResource("CapsuleShape2D_eow3j")
+
+[node name="ShootingPoint" type="Marker2D" parent="." unique_id=1605745287]
+position = Vector2(20, 0)

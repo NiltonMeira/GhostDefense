@@ -2,8 +2,13 @@ extends Node2D
 
 @export var enemy_scene: PackedScene
 
-@onready var path = $"../Path2D"
+@onready var paths = [
+	$"../Path2D",
+	$"../Path2D2"
+]
 @onready var wave_label = $"../WaveLabel"
+
+@export var reward: int = 25
 
 var waves = [
 	{
@@ -25,7 +30,22 @@ var waves = [
 		"count": 6,
 		"speed": 90.0,
 		"spawn_delay": 0.8
-	}
+	},
+	{
+		"count": 8,
+		"speed": 90.0,
+		"spawn_delay": 0.8
+	},
+	{
+		"count": 10,
+		"speed": 90.0,
+		"spawn_delay": 0.8
+	},
+	{
+		"count": 5,
+		"speed": 200.0,
+		"spawn_delay": 0.2
+	},
 ]
 
 func _ready():
@@ -39,21 +59,32 @@ func start_waves():
 
 		wave_label.text = "WAVE " + str(i + 1)
 
-		await spawn_wave(wave)
+		await spawn_wave(wave, i)
 
 		while get_tree().get_nodes_in_group("Enemy").size() > 0:
 			await get_tree().create_timer(0.5).timeout
+			
+		get_tree().current_scene.add_money(reward)
 
 		await get_tree().create_timer(2.0).timeout
 
 	get_tree().current_scene.show_you_win()
 
-func spawn_wave(wave):
+func spawn_wave(wave, wave_index):
 	for i in range(wave["count"]):
+
 		var enemy = enemy_scene.instantiate()
 
 		enemy.speed = wave["speed"]
 
-		path.add_child(enemy)
+		var skeleton = enemy.get_node("Skeleton")
 
-		await get_tree().create_timer(wave["spawn_delay"]).timeout
+		# aumenta 5 de vida por rodada
+		skeleton.health += wave_index * 5
+
+		var selected_path = paths.pick_random()
+		selected_path.add_child(enemy)
+
+		await get_tree().create_timer(
+			wave["spawn_delay"]
+		).timeout

@@ -9,6 +9,7 @@ radius = 16.0
 height = 46.0
 
 [node name="PathFollow2D" type="PathFollow2D" unique_id=242063834]
+process_mode = 1
 rotation = 0.8398896
 rotates = false
 loop = false

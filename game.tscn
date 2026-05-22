@@ -5,12 +5,19 @@
 [ext_resource type="Script" uid="uid://kjqyd7qoye3m" path="res://enemy_spawner.gd" id="2_eow3j"]
 [ext_resource type="PackedScene" uid="uid://w2bgtxeo7nm4" path="res://Skeleton.tscn" id="3_ryrav"]
 [ext_resource type="PackedScene" uid="uid://bea2mitwnu2lb" path="res://hero.tscn" id="5_7jktm"]
+[ext_resource type="Texture2D" uid="uid://bkyp1nqfv67v8" path="res://CoinGold.png" id="6_ryrav"]
 
 [sub_resource type="Curve2D" id="Curve2D_7jktm"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 112.999954, 86, 0, 0, 0, 0, 138.99995, 115, 0, 0, 0, 0, 143.99995, 149, 0, 0, 0, 0, 157.99995, 188, 0, 0, 0, 0, 196.99997, 214, 0, 0, 0, 0, 241.99997, 219, 0, 0, 0, 0, 293.99997, 225, 0, 0, 0, 0, 352.99997, 220, 0, 0, 0, 0, 390, 207, 0, 0, 0, 0, 419, 180, 0, 0, 0, 0, 437, 154, 0, 0, 0, 0, 464, 135, 0, 0, 0, 0, 498, 123, 0, 0, 0, 0, 530, 125, 0, 0, 0, 0, 556, 141, 0, 0, 0, 0, 569, 170, 0, 0, 0, 0, 572, 196, 0, 0, 0, 0, 588, 214, 0, 0, 0, 0, 611, 225, 0, 0, 0, 0, 643, 225, 0, 0, 0, 0, 678, 227, 0, 0, 0, 0, 701, 230, 0, 0, 0, 0, 730, 243, 0, 0, 0, 0, 740, 259, 0, 0, 0, 0, 743, 286, 0, 0, 0, 0, 748, 309, 0, 0, 0, 0, 757, 326, 0, 0, 0, 0, 782.00006, 339, 0, 0, 0, 0, 814.00006, 347, 0, 0, 0, 0, 852.00006, 352, 0, 0, 0, 0, 881.00006, 359, 0, 0, 0, 0, 901.00006, 368, 0, 0, 0, 0, 912.00006, 383, 0, 0, 0, 0, 922.00006, 402, 0, 0, 0, 0, 926.00006, 425, 0, 0, 0, 0, 917.00006, 452, 0, 0, 0, 0, 914.00006, 471, 0, 0, 0, 0, 922.00006, 497, 0, 0, 0, 0, 935.00006, 513, 0, 0, 0, 0, 951.00006, 528, 0, 0, 0, 0, 973.00006, 549, 0, 0, 0, 0, 996.00006, 558, 0, 0, 0, 0, 1018.00006, 573)
 }
 point_count = 43
+
+[sub_resource type="Curve2D" id="Curve2D_ryrav"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 111, 84, 0, 0, 0, 0, 126, 99, 0, 0, 0, 0, 136, 113, 0, 0, 0, 0, 140, 132, 0, 0, 0, 0, 146, 151, 0, 0, 0, 0, 152, 170, 0, 0, 0, 0, 162, 189, 0, 0, 0, 0, 180, 202, 0, 0, 0, 0, 205, 213, 0, 0, 0, 0, 228, 218, 0, 0, 0, 0, 251, 219, 0, 0, 0, 0, 270, 221, 0, 0, 0, 0, 293, 223, 0, 0, 0, 0, 300, 237, 0, 0, 0, 0, 306, 252, 0, 0, 0, 0, 309, 267, 0, 0, 0, 0, 313, 280, 0, 0, 0, 0, 319, 294, 0, 0, 0, 0, 328, 306, 0, 0, 0, 0, 341, 315, 0, 0, 0, 0, 358, 324, 0, 0, 0, 0, 375, 330, 0, 0, 0, 0, 388, 336, 0, 0, 0, 0, 401, 343, 0, 0, 0, 0, 416, 349, 0, 0, 0, 0, 422, 361, 0, 0, 0, 0, 425, 375, 0, 0, 0, 0, 427, 391, 0, 0, 0, 0, 427, 410, 0, 0, 0, 0, 429, 421, 0, 0, 0, 0, 432, 429, 0, 0, 0, 0, 436, 438, 0, 0, 0, 0, 444, 452, 0, 0, 0, 0, 452, 457, 0, 0, 0, 0, 467, 463, 0, 0, 0, 0, 482, 468, 0, 0, 0, 0, 500, 469, 0, 0, 0, 0, 525, 466, 0, 0, 0, 0, 547, 463, 0, 0, 0, 0, 564, 460, 0, 0, 0, 0, 578, 458, 0, 0, 0, 0, 595, 460, 0, 0, 0, 0, 614, 462, 0, 0, 0, 0, 631, 468, 0, 0, 0, 0, 647, 476, 0, 0, 0, 0, 658, 485, 0, 0, 0, 0, 661, 500, 0, 0, 0, 0, 663, 516, 0, 0, 0, 0, 668, 530, 0, 0, 0, 0, 674, 539, 0, 0, 0, 0, 687, 548, 0, 0, 0, 0, 700, 556, 0, 0, 0, 0, 716, 558, 0, 0, 0, 0, 736, 559, 0, 0, 0, 0, 760, 561, 0, 0, 0, 0, 790, 557, 0, 0, 0, 0, 817, 554, 0, 0, 0, 0, 848, 555, 0, 0, 0, 0, 874, 557, 0, 0, 0, 0, 889, 556, 0, 0, 0, 0, 906, 557, 0, 0, 0, 0, 923, 564, 0, 0, 0, 0, 940, 565, 0, 0, 0, 0, 963, 564, 0, 0, 0, 0, 979, 561, 0, 0, 0, 0, 995, 561, 0, 0, 0, 0, 1007, 568, 0, 0, 0, 0, 1016, 576)
+}
+point_count = 68
 
 [sub_resource type="LabelSettings" id="LabelSettings_feb5d"]
 font_size = 80
@@ -24,10 +31,12 @@ font_color = Color(0, 0.5019608, 0, 1)
 font_size = 20
 
 [node name="Game" type="Node2D" unique_id=1972926176]
+process_mode = 3
 script = ExtResource("1_j5wjh")
 hero_scene = ExtResource("5_7jktm")
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1175435410]
+process_mode = 1
 script = ExtResource("2_eow3j")
 enemy_scene = ExtResource("3_ryrav")
 
@@ -40,6 +49,9 @@ texture = ExtResource("1_80nbo")
 position = Vector2(6.1035156e-05, 0)
 scale = Vector2(0.99999994, 1)
 curve = SubResource("Curve2D_7jktm")
+
+[node name="Path2D2" type="Path2D" parent="." unique_id=45734882]
+curve = SubResource("Curve2D_ryrav")
 
 [node name="game_over" type="CanvasLayer" parent="." unique_id=59859463]
 visible = false
@@ -72,3 +84,44 @@ offset_right = 1140.0
 offset_bottom = 38.0
 text = "Wave 01"
 label_settings = SubResource("LabelSettings_j5wjh")
+
+[node name="PauseMenu" type="Control" parent="." unique_id=981160739]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="PauseMenu" unique_id=816736215]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 650.0
+
+[node name="ContinueButton" type="Button" parent="PauseMenu/Panel" unique_id=1161762193]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 247.0
+offset_right = 678.0
+offset_bottom = 325.0
+text = "Continue"
+
+[node name="QuitButton" type="Button" parent="PauseMenu/Panel" unique_id=1180084247]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 355.0
+offset_right = 675.0
+offset_bottom = 433.0
+text = "Quit"
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=87056901]
+position = Vector2(60.78118, 36.25)
+scale = Vector2(0.061168075, 0.048758857)
+texture = ExtResource("6_ryrav")
+
+[node name="MoneyLabel" type="Label" parent="." unique_id=86370557]
+offset_left = 84.0
+offset_top = 25.0
+offset_right = 133.0
+offset_bottom = 48.0
+text = "0.0"

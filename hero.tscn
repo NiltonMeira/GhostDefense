@@ -9,6 +9,7 @@ radius = 23.0
 height = 56.0
 
 [node name="Hero" type="CharacterBody2D" unique_id=797298957]
+process_mode = 1
 script = ExtResource("1_u1ipw")
 projectile_scene = ExtResource("2_xpv8o")
 

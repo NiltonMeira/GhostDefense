@@ -41,8 +41,8 @@ script = ExtResource("2_eow3j")
 enemy_scene = ExtResource("3_ryrav")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163103027]
-position = Vector2(576, 325.5)
-scale = Vector2(0.75130206, 0.64160156)
+position = Vector2(579, 323.49997)
+scale = Vector2(0.7552083, 0.6455078)
 texture = ExtResource("1_80nbo")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=2057929972]
@@ -50,34 +50,73 @@ position = Vector2(6.1035156e-05, 0)
 scale = Vector2(0.99999994, 1)
 curve = SubResource("Curve2D_7jktm")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Path2D" unique_id=1180884135]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Path2D/StaticBody2D" unique_id=1537903774]
+polygon = PackedVector2Array(-6.103516e-05, 18, 12.999941, 24, 32.999943, 39, 46.999943, 50, 64.99995, 70, 82.99995, 87, 95.999954, 101, 106.999954, 110, 113.999954, 122, 115.999954, 137, 113.999954, 158, 117.999954, 178, 130.99995, 196, 146.99995, 213, 173.99995, 228, 201.99997, 235, 235.99997, 241, 266.99997, 244, 317.99997, 242, 361.99997, 239, 397, 233, 433, 218, 455, 197, 467, 174, 480, 153, 500, 147, 520, 149, 537, 156, 544, 168, 543, 183, 543, 199, 548, 210, 555, 223, 567, 231, 585, 238, 606, 245, 634, 246, 658, 247, 674, 247, 696, 248, 706, 252, 715, 264, 717, 278, 715, 299, 718, 321, 729, 337, 745, 350, 763, 356, 788.00006, 365, 812.00006, 367, 841.00006, 370, 869.00006, 376, 887.00006, 384, 897.00006, 397, 901.00006, 412, 897.00006, 437, 890.00006, 456, 887.00006, 472, 887.00006, 490, 889.00006, 506, 908.00006, 529, 924.00006, 541, 940.00006, 553, 962.00006, 565, 1067, 641, 1149, 645, 1148, 616, 1118, 603, 1075, 579, 1039, 547, 988.00006, 515, 956.00006, 490, 954.00006, 460, 969.00006, 426, 966.00006, 390, 953.00006, 367, 935.00006, 349, 913.00006, 338, 891.00006, 331, 865.00006, 327, 834.00006, 325, 801.00006, 321, 785.00006, 310, 780.00006, 294, 785.00006, 268, 781.00006, 244, 764, 226, 733, 209, 698, 201, 663, 202, 635, 202, 611, 196, 607, 175, 607, 159, 605, 142, 595, 131, 577, 117, 556, 108, 517, 102, 487, 103, 453, 110, 429, 122, 411, 140, 400, 164, 384, 182, 358.99997, 196, 321.99997, 202, 284.99997, 201, 246.99997, 198, 209.99997, 189, 192.99997, 181, 181.99995, 162, 181.99995, 138, 181.99995, 125, 178.99995, 108, 164.99995, 92, 150.99995, 80, 140.99995, 74, 60.999947, 3)
+
 [node name="Path2D2" type="Path2D" parent="." unique_id=45734882]
 curve = SubResource("Curve2D_ryrav")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Path2D2" unique_id=2051842789]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Path2D2/StaticBody2D" unique_id=1517932923]
+position = Vector2(586.271, 452.21198)
+polygon = PackedVector2Array(-333.271, -210.21198, -320.271, -202.21198, -311.271, -197.21198, -304.271, -184.21198, -303.271, -172.21198, -300.271, -157.21198, -296.271, -146.21198, -289.271, -137.21198, -281.271, -126.211975, -272.271, -121.211975, -261.271, -115.211975, -247.271, -109.211975, -230.271, -103.211975, -210.271, -99.211975, -199.271, -95.211975, -187.271, -86.211975, -181.271, -74.211975, -183.271, -59.211975, -186.271, -46.211975, -188.271, -32.211975, -187.271, -16.211975, -181.271, 1.7880249, -170.271, 14.788025, -153.271, 27.788025, -132.271, 36.788025, -105.270996, 42.788025, -87.270996, 42.788025, -66.270996, 42.788025, -40.270996, 38.788025, -26.270996, 34.788025, -8.270996, 29.788025, 6.729004, 26.788025, 24.729004, 28.788025, 34.729004, 34.788025, 45.729004, 42.788025, 45.729004, 50.788025, 47.729004, 64.788025, 47.729004, 77.788025, 52.729004, 88.788025, 59.729004, 100.788025, 72.729004, 110.788025, 82.729004, 117.788025, 106.729004, 124.788025, 125.729004, 130.78802, 151.729, 133.78802, 173.729, 132.78802, 191.729, 131.78802, 213.729, 127.788025, 235.729, 124.788025, 263.729, 120.788025, 285.729, 120.788025, 308.729, 124.788025, 334.729, 131.78802, 351.729, 134.78802, 427.729, 151.78802, 409.729, 137.78802, 388.729, 121.788025, 357.729, 102.788025, 339.729, 91.788025, 317.729, 80.788025, 291.729, 73.788025, 263.729, 73.788025, 234.729, 77.788025, 197.729, 83.788025, 163.729, 86.788025, 132.729, 81.788025, 116.729004, 67.788025, 111.729004, 48.788025, 110.729004, 29.788025, 101.729004, 13.788025, 79.729004, -4.211975, 49.729004, -15.211975, 10.729004, -19.211975, -24.270996, -16.211975, -57.270996, -6.211975, -83.270996, -2.211975, -104.270996, -7.211975, -119.564575, -20.769165, -120.270996, -42.211975, -116.270996, -75.211975, -124.270996, -102.211975, -141.271, -121.211975, -164.271, -134.21198, -201.271, -145.21198, -225.271, -154.21198, -234.271, -164.21198, -240.271, -178.21198, -237.271, -193.21198, -232.271, -202.21198, -217.271, -214.21198)
 
 [node name="game_over" type="CanvasLayer" parent="." unique_id=59859463]
 process_mode = 3
 visible = false
 
 [node name="Label" type="Label" parent="game_over" unique_id=208777291]
-offset_left = 327.0
-offset_top = 258.0
-offset_right = 785.0
-offset_bottom = 368.0
+offset_left = 331.0
+offset_top = 135.0
+offset_right = 789.0
+offset_bottom = 245.0
 text = "GAME OVER"
 label_settings = SubResource("LabelSettings_feb5d")
 uppercase = true
+
+[node name="RestartOverButton" type="Button" parent="game_over" unique_id=368539291]
+offset_left = 462.0
+offset_top = 274.0
+offset_right = 657.0
+offset_bottom = 355.0
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="game_over" unique_id=1259377083]
+offset_left = 467.0
+offset_top = 388.0
+offset_right = 661.0
+offset_bottom = 466.0
+text = "Quit"
 
 [node name="you_win" type="CanvasLayer" parent="." unique_id=918588722]
 process_mode = 3
 visible = false
 
 [node name="Label" type="Label" parent="you_win" unique_id=908935430]
-offset_left = 397.0
-offset_top = 254.0
-offset_right = 750.0
-offset_bottom = 364.0
+offset_left = 395.0
+offset_top = 136.0
+offset_right = 748.0
+offset_bottom = 246.0
 text = "you win"
 label_settings = SubResource("LabelSettings_eow3j")
 uppercase = true
+
+[node name="RestartWinButton" type="Button" parent="you_win" unique_id=14628931]
+offset_left = 474.0
+offset_top = 267.0
+offset_right = 669.0
+offset_bottom = 348.0
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="you_win" unique_id=1699593567]
+offset_left = 480.0
+offset_top = 378.0
+offset_right = 674.0
+offset_bottom = 456.0
+text = "Quit"
 
 [node name="WaveLabel" type="Label" parent="." unique_id=1168787178]
 offset_left = 1043.0
@@ -102,19 +141,27 @@ offset_bottom = 650.0
 
 [node name="ContinueButton" type="Button" parent="PauseMenu/Panel" unique_id=1161762193]
 layout_mode = 0
-offset_left = 472.0
-offset_top = 247.0
-offset_right = 678.0
-offset_bottom = 325.0
+offset_left = 481.0
+offset_top = 163.0
+offset_right = 673.0
+offset_bottom = 241.0
 text = "Continue"
 
 [node name="QuitButton" type="Button" parent="PauseMenu/Panel" unique_id=1180084247]
 layout_mode = 0
-offset_left = 469.0
-offset_top = 355.0
-offset_right = 675.0
-offset_bottom = 433.0
+offset_left = 482.0
+offset_top = 363.0
+offset_right = 676.0
+offset_bottom = 441.0
 text = "Quit"
+
+[node name="RestartPauseButton" type="Button" parent="PauseMenu/Panel" unique_id=2122189646]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 262.0
+offset_right = 678.0
+offset_bottom = 343.0
+text = "Restart"
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=87056901]
 position = Vector2(60.78118, 36.25)

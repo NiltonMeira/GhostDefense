@@ -1,12 +1,23 @@
 extends CharacterBody2D
 
 @export var projectile_scene: PackedScene
-@export var atack_speed: float = 2.0
+@export var atack_speed: float = 2.2
 @export var attack_range: float = 200.0
 
 @onready var shooting_point = $ShootingPoint
 
+@export var is_preview: bool = false
+@export var show_range: bool = false
+
+@export var placement_radius: float = 30.0
+@export var can_place: bool = true
+
 func _ready():
+	queue_redraw()
+
+	if is_preview:
+		return
+
 	atack_loop()
 	
 func atack_loop():
@@ -47,7 +58,7 @@ func get_target():
 		if !is_instance_valid(enemy):
 			continue
 		
-		var distance = shooting_point.global_position.distance_to(enemy.global_position)
+		var distance = global_position.distance_to(enemy.global_position)
 		
 		if distance > attack_range:
 			continue
@@ -59,5 +70,33 @@ func get_target():
 	return best_enemy
 	
 func _draw():
-	var center = shooting_point.position
-	draw_circle(center, attack_range, Color(1, 0, 0, 0.2))
+	if !show_range:
+		return
+
+	var center = Vector2.ZERO
+	var color = Color.WHITE
+
+	if !can_place:
+		color = Color.RED
+
+	draw_arc(
+		center,
+		attack_range,
+		0,
+		TAU,
+		180,
+		color,
+		2.5,
+		true
+	)
+
+	draw_arc(
+		Vector2.ZERO,
+		placement_radius,
+		0,
+		TAU,
+		120,
+		color,
+		2.5,
+		true
+	)

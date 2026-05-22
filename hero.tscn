@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dvxhfveooqi3f" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle/0_Forest_Ranger_Idle_000.png" id="3_iyggp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eow3j"]
-radius = 23.0
-height = 56.0
+radius = 27.0
+height = 60.0
 
 [node name="Hero" type="CharacterBody2D" unique_id=797298957]
 process_mode = 1
@@ -21,4 +21,4 @@ texture = ExtResource("3_iyggp")
 shape = SubResource("CapsuleShape2D_eow3j")
 
 [node name="ShootingPoint" type="Marker2D" parent="." unique_id=1605745287]
-position = Vector2(20, 0)
+position = Vector2(-14, 14)

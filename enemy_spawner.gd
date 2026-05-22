@@ -79,8 +79,8 @@ func spawn_wave(wave, wave_index):
 
 		var skeleton = enemy.get_node("Skeleton")
 
-		# aumenta 5 de vida por rodada
-		skeleton.health += wave_index * 5
+		# aumenta 2 de vida por rodada
+		skeleton.health += wave_index * 2
 
 		var selected_path = paths.pick_random()
 		selected_path.add_child(enemy)

@@ -54,6 +54,7 @@ curve = SubResource("Curve2D_7jktm")
 curve = SubResource("Curve2D_ryrav")
 
 [node name="game_over" type="CanvasLayer" parent="." unique_id=59859463]
+process_mode = 3
 visible = false
 
 [node name="Label" type="Label" parent="game_over" unique_id=208777291]
@@ -66,6 +67,7 @@ label_settings = SubResource("LabelSettings_feb5d")
 uppercase = true
 
 [node name="you_win" type="CanvasLayer" parent="." unique_id=918588722]
+process_mode = 3
 visible = false
 
 [node name="Label" type="Label" parent="you_win" unique_id=908935430]

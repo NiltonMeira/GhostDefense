@@ -36,6 +36,7 @@ func show_game_over():
 
 	game_finished = true
 	game_over.visible = true
+	get_tree().paused = true
 
 func show_you_win():
 	if game_finished:
@@ -43,15 +44,16 @@ func show_you_win():
 
 	game_finished = true
 	you_win.visible = true
+	get_tree().paused = true
 
 func _process(_delta):
+	if game_finished:
+		return
+
 	if Input.is_action_just_pressed("pause"):
 		toggle_pause()
 
 	if get_tree().paused:
-		return
-
-	if game_finished:
 		return
 		
 	if Input.is_action_just_pressed("place_hero"):

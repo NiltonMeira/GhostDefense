@@ -68,7 +68,7 @@ var waves = [
 
 	{
 		"count": 1,
-		"speed": 200.0,
+		"speed": 50.0,
 		"spawn_delay": 0.2,
 		"boss": true
 	} 

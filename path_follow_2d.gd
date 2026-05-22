@@ -1,10 +1,14 @@
 extends PathFollow2D
 
 @export var speed: float = 50.0
+
+@onready var animated_sprite: AnimatedSprite2D = $Skeleton/AnimatedSprite2D
+
 var reached_end = false
 
 func _ready():
 	progress = 0
+	animated_sprite.play("walk")
 	add_to_group("Enemy")
 
 func _process(delta):

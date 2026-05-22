@@ -3,10 +3,66 @@
 [ext_resource type="Script" uid="uid://by2d2mdsaaepb" path="res://path_follow_2d.gd" id="1_ppgkr"]
 [ext_resource type="Script" uid="uid://dmsv8ye56rba1" path="res://skeleton.gd" id="2_o44yk"]
 [ext_resource type="Texture2D" uid="uid://ckhhxyrn1cixa" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_000.png" id="3_637nb"]
+[ext_resource type="Texture2D" uid="uid://bmawkxltnmvra" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_001.png" id="4_x2ulk"]
+[ext_resource type="Texture2D" uid="uid://cyqeyv5qy16ge" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_002.png" id="5_coo33"]
+[ext_resource type="Texture2D" uid="uid://b65lbluhsiiet" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_004.png" id="6_2pct8"]
+[ext_resource type="Texture2D" uid="uid://dmiud2dkefrqy" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_005.png" id="7_iagsk"]
+[ext_resource type="Texture2D" uid="uid://c11exowuhehmi" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_006.png" id="8_cny3r"]
+[ext_resource type="Texture2D" uid="uid://d00sq504ukgkx" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_007.png" id="9_d14jf"]
+[ext_resource type="Texture2D" uid="uid://coafb70t0cu8w" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_008.png" id="10_kvlko"]
+[ext_resource type="Texture2D" uid="uid://cgx4m5upsu6ed" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_009.png" id="11_dqh0l"]
+[ext_resource type="Texture2D" uid="uid://cqkvel5vcvwsu" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_010.png" id="12_upgkp"]
+[ext_resource type="Texture2D" uid="uid://cnqdg3pc7276t" path="res://Skeleton arts/Skeleton_Crusader_1/PNG/PNG Sequences/Running/0_Skeleton_Crusader_Running_011.png" id="13_0smjb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_psfm6"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_637nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x2ulk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_coo33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2pct8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_iagsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cny3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d14jf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kvlko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dqh0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_upgkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0smjb")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryrav"]
-radius = 16.0
-height = 46.0
+radius = 12.997839
+height = 41.995644
 
 [node name="PathFollow2D" type="PathFollow2D" unique_id=242063834]
 process_mode = 1
@@ -19,11 +75,12 @@ script = ExtResource("1_ppgkr")
 rotation = -0.83775806
 script = ExtResource("2_o44yk")
 
-[node name="Sprite2D" type="Sprite2D" parent="Skeleton" unique_id=183738355]
-position = Vector2(5.9829407, -8.012775)
-scale = Vector2(0.08555546, 0.08333333)
-texture = ExtResource("3_637nb")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton" unique_id=1941794967]
+position = Vector2(-0.029840887, -13.999968)
+scale = Vector2(0.07154431, 0.07374916)
+sprite_frames = SubResource("SpriteFrames_psfm6")
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton" unique_id=1645100022]
-position = Vector2(4.9914703, -4.0106506)
+position = Vector2(-1.0234451, -10.997844)
 shape = SubResource("CapsuleShape2D_ryrav")

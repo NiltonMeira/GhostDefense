@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var health: int = 1000
-@export var reward: int = 20
+@export var health: int = 5000
+@export var reward: int = 30
 	
 func take_damage(amount: int):
 	health -= amount

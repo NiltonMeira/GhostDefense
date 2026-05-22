@@ -2,7 +2,7 @@ extends PathFollow2D
 
 @export var speed: float = 50.0
 
-@onready var animated_sprite: AnimatedSprite2D = $Skeleton/AnimatedSprite2D
+@onready var animated_sprite: AnimatedSprite2D = $boss/AnimatedSprite2D
 
 var reached_end = false
 
@@ -13,7 +13,7 @@ func _ready():
 	if animated_sprite != null:
 		animated_sprite.play("walk")
 	else:
-		print("AnimatedSprite2D não encontrado no Skeleton")
+		print("AnimatedSprite2D não encontrado no Boss")
 
 func _process(delta):
 	progress += speed * delta

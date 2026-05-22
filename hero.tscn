@@ -2,23 +2,150 @@
 
 [ext_resource type="Script" uid="uid://cqyg2a5gqohrb" path="res://hero.gd" id="1_u1ipw"]
 [ext_resource type="PackedScene" uid="uid://b130bumwaacmj" path="res://projectile.tscn" id="2_xpv8o"]
-[ext_resource type="Texture2D" uid="uid://dvxhfveooqi3f" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle/0_Forest_Ranger_Idle_000.png" id="3_iyggp"]
+[ext_resource type="Texture2D" uid="uid://dhguorg2sxac6" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Shooting/0_Forest_Ranger_Shooting_000.png" id="3_h0fhm"]
+[ext_resource type="Texture2D" uid="uid://bduoirok6v6mp" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_000.png" id="3_t83rg"]
+[ext_resource type="Texture2D" uid="uid://cmpfqel1s12lx" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Shooting/0_Forest_Ranger_Shooting_001.png" id="4_e0f4q"]
+[ext_resource type="Texture2D" uid="uid://dxswjv35oc407" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_001.png" id="4_p37hd"]
+[ext_resource type="Texture2D" uid="uid://boc4jeys7x2fq" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_002.png" id="5_rbpd4"]
+[ext_resource type="Texture2D" uid="uid://dks3ofs2v1oct" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Shooting/0_Forest_Ranger_Shooting_002.png" id="5_xffbj"]
+[ext_resource type="Texture2D" uid="uid://c1hs4dooab5pt" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_003.png" id="6_2dd22"]
+[ext_resource type="Texture2D" uid="uid://dqkfacdbjcd4i" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Shooting/0_Forest_Ranger_Shooting_003.png" id="6_kh1b4"]
+[ext_resource type="Texture2D" uid="uid://b2n11py20er63" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Shooting/0_Forest_Ranger_Shooting_004.png" id="7_wlq1f"]
+[ext_resource type="Texture2D" uid="uid://cb0uyyf87u4w8" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_004.png" id="7_yf4qq"]
+[ext_resource type="Texture2D" uid="uid://yf2j63mu2wox" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Shooting/0_Forest_Ranger_Shooting_006.png" id="8_7t4y0"]
+[ext_resource type="Texture2D" uid="uid://dh3cx8pd7yb4b" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_005.png" id="8_7x8b2"]
+[ext_resource type="Texture2D" uid="uid://bf11t5wap6v48" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Shooting/0_Forest_Ranger_Shooting_005.png" id="9_86rat"]
+[ext_resource type="Texture2D" uid="uid://dgjek1wbg67l" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_006.png" id="9_hlyk8"]
+[ext_resource type="Texture2D" uid="uid://c653ud0eextgy" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_007.png" id="10_d1dnq"]
+[ext_resource type="Texture2D" uid="uid://cykovjaprljbe" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Shooting/0_Forest_Ranger_Shooting_007.png" id="10_kdsik"]
+[ext_resource type="Texture2D" uid="uid://xgo3rukceitj" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_008.png" id="11_2lllu"]
+[ext_resource type="Texture2D" uid="uid://cnr5vdde0b0eg" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Shooting/0_Forest_Ranger_Shooting_008.png" id="11_sy5a3"]
+[ext_resource type="Texture2D" uid="uid://b04otatfho0mx" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_009.png" id="12_81bmh"]
+[ext_resource type="Texture2D" uid="uid://hdgdtcs6qph4" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_010.png" id="13_hjf3s"]
+[ext_resource type="Texture2D" uid="uid://c3asau6h4w0sp" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_012.png" id="14_i7p0s"]
+[ext_resource type="Texture2D" uid="uid://dqw033g22l1rf" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_011.png" id="15_ethju"]
+[ext_resource type="Texture2D" uid="uid://d3mflhbpwbgcn" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_014.png" id="16_4claq"]
+[ext_resource type="Texture2D" uid="uid://mpmuwak0ie03" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_013.png" id="17_5vlua"]
+[ext_resource type="Texture2D" uid="uid://vlwennhgq7od" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_015.png" id="18_7pkow"]
+[ext_resource type="Texture2D" uid="uid://8dot7yiev3v3" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_016.png" id="19_f5j6b"]
+[ext_resource type="Texture2D" uid="uid://b1k5itk5co4uv" path="res://Rangers arts/Forest_Ranger_1/PNG/PNG Sequences/Idle Blinking/0_Forest_Ranger_Idle Blinking_017.png" id="20_yhmpr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ubutb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_t83rg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p37hd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rbpd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2dd22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yf4qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7x8b2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hlyk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d1dnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2lllu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_81bmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hjf3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i7p0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ethju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4claq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5vlua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_7pkow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_f5j6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yhmpr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_h0fhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e0f4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xffbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kh1b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wlq1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7t4y0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_86rat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kdsik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sy5a3")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 8.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eow3j"]
 radius = 27.0
 height = 60.0
 
-[node name="Hero" type="CharacterBody2D" unique_id=797298957]
+[node name="Archer" type="CharacterBody2D" unique_id=797298957]
 process_mode = 1
 script = ExtResource("1_u1ipw")
 projectile_scene = ExtResource("2_xpv8o")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1807728874]
-scale = Vector2(-0.12603511, 0.09791033)
-texture = ExtResource("3_iyggp")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=805889216]
+position = Vector2(-0.9999924, -0.9999924)
+rotation = 3.1415927
+scale = Vector2(0.126, -0.098)
+sprite_frames = SubResource("SpriteFrames_ubutb")
+animation = &"shoot"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1789152850]
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_eow3j")
 
 [node name="ShootingPoint" type="Marker2D" parent="." unique_id=1605745287]
-position = Vector2(-14, 14)
+position = Vector2(-24, 15)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

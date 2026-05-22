@@ -1,29 +1,85 @@
 [gd_scene format=3 uid="uid://mb78f2teuiyk"]
 
-[ext_resource type="Script" uid="uid://by2d2mdsaaepb" path="res://path_follow_2d.gd" id="1_8d8lm"]
+[ext_resource type="Script" uid="uid://cdfdvcjxj61xj" path="res://boss_1.gd" id="1_0ikit"]
 [ext_resource type="Script" uid="uid://cq5pqpr250e3w" path="res://boss.gd" id="2_8d8lm"]
-[ext_resource type="Texture2D" uid="uid://b1p7sjcjsuqqd" path="res://Skeleton arts/Skeleton_Crusader_3/PNG/PNG Sequences/Walking/0_Skeleton_Crusader_Walking_000.png" id="3_8d8lm"]
+[ext_resource type="Texture2D" uid="uid://bwylgvdgjs3y" path="res://Skeleton arts/Skeleton_Crusader_2/PNG/PNG Sequences/Run Slashing/0_Skeleton_Crusader_Run Slashing_000.png" id="4_ftpd6"]
+[ext_resource type="Texture2D" uid="uid://280fwflcik20" path="res://Skeleton arts/Skeleton_Crusader_2/PNG/PNG Sequences/Run Slashing/0_Skeleton_Crusader_Run Slashing_001.png" id="5_g534c"]
+[ext_resource type="Texture2D" uid="uid://2pk2qkdswdm" path="res://Skeleton arts/Skeleton_Crusader_2/PNG/PNG Sequences/Run Slashing/0_Skeleton_Crusader_Run Slashing_002.png" id="6_afyo4"]
+[ext_resource type="Texture2D" uid="uid://c47cnkkwg6fu8" path="res://Skeleton arts/Skeleton_Crusader_2/PNG/PNG Sequences/Run Slashing/0_Skeleton_Crusader_Run Slashing_003.png" id="7_j4v56"]
+[ext_resource type="Texture2D" uid="uid://deayfelqosf2c" path="res://Skeleton arts/Skeleton_Crusader_2/PNG/PNG Sequences/Run Slashing/0_Skeleton_Crusader_Run Slashing_004.png" id="8_f581p"]
+[ext_resource type="Texture2D" uid="uid://db0pvuc06c4ya" path="res://Skeleton arts/Skeleton_Crusader_2/PNG/PNG Sequences/Run Slashing/0_Skeleton_Crusader_Run Slashing_005.png" id="9_5wvku"]
+[ext_resource type="Texture2D" uid="uid://bqauee0ilfebf" path="res://Skeleton arts/Skeleton_Crusader_2/PNG/PNG Sequences/Run Slashing/0_Skeleton_Crusader_Run Slashing_006.png" id="10_cg3tl"]
+[ext_resource type="Texture2D" uid="uid://2u4k52sx4535" path="res://Skeleton arts/Skeleton_Crusader_2/PNG/PNG Sequences/Run Slashing/0_Skeleton_Crusader_Run Slashing_007.png" id="11_hmvua"]
+[ext_resource type="Texture2D" uid="uid://drs2387i12l5c" path="res://Skeleton arts/Skeleton_Crusader_2/PNG/PNG Sequences/Run Slashing/0_Skeleton_Crusader_Run Slashing_008.png" id="12_nj2fl"]
+[ext_resource type="Texture2D" uid="uid://dfnmbf7cxvdwe" path="res://Skeleton arts/Skeleton_Crusader_2/PNG/PNG Sequences/Run Slashing/0_Skeleton_Crusader_Run Slashing_009.png" id="13_116jk"]
+[ext_resource type="Texture2D" uid="uid://oeae2jfs8gb7" path="res://Skeleton arts/Skeleton_Crusader_2/PNG/PNG Sequences/Run Slashing/0_Skeleton_Crusader_Run Slashing_010.png" id="14_u5j6a"]
+[ext_resource type="Texture2D" uid="uid://0tsn55gxu7r6" path="res://Skeleton arts/Skeleton_Crusader_2/PNG/PNG Sequences/Run Slashing/0_Skeleton_Crusader_Run Slashing_011.png" id="15_ix1tu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yb57i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ftpd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g534c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_afyo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j4v56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f581p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5wvku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cg3tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hmvua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nj2fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_116jk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_u5j6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ix1tu")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryrav"]
 radius = 58.002003
 height = 155.99963
 
-[node name="PathFollow2D" type="PathFollow2D" unique_id=242063834]
+[node name="BossFollow2D" type="PathFollow2D" unique_id=242063834]
 process_mode = 1
 rotation = 0.8398896
 rotates = false
 loop = false
-script = ExtResource("1_8d8lm")
+script = ExtResource("1_0ikit")
 
 [node name="boss" type="CharacterBody2D" parent="." unique_id=48893616]
 rotation = -0.83775806
 script = ExtResource("2_8d8lm")
 
-[node name="Sprite2D" type="Sprite2D" parent="boss" unique_id=183738355]
-position = Vector2(0.8166895, -86.00194)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="boss" unique_id=49565278]
+position = Vector2(2.8614502, -65.00627)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_8d8lm")
+sprite_frames = SubResource("SpriteFrames_yb57i")
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss" unique_id=1645100022]
-position = Vector2(2.84227, -74.006226)
+position = Vector2(-2.106598, -49.99562)
 shape = SubResource("CapsuleShape2D_ryrav")

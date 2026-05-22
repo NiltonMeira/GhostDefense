@@ -7,102 +7,62 @@ extends Node2D
 	$"../Path2D",
 	$"../Path2D2"
 ]
+
 @onready var wave_label = $"../WaveLabel"
 
 @export var reward: int = 25
 
-var waves = [
-	{
-		"count": 2,
-		"speed": 40.0,
-		"spawn_delay": 1.8
-	}, # tutorial
+var current_wave: int = 1
 
-	{
-		"count": 3,
-		"speed": 45.0,
-		"spawn_delay": 1.6
-	},
-
-	{
-		"count": 5,
-		"speed": 50.0,
-		"spawn_delay": 1.4
-	},
-
-	{
-		"count": 6,
-		"speed": 55.0,
-		"spawn_delay": 1.3
-	},
-
-	{
-		"count": 8,
-		"speed": 60.0,
-		"spawn_delay": 1.2
-	},
-
-	{
-		"count": 10,
-		"speed": 70.0,
-		"spawn_delay": 1.0
-	},
-
-	{
-		"count": 12,
-		"speed": 80.0,
-		"spawn_delay": 0.9
-	},
-
-	{
-		"count": 14,
-		"speed": 90.0,
-		"spawn_delay": 0.8
-	},
-
-	{
-		"count": 16,
-		"speed": 100.0,
-		"spawn_delay": 0.7
-	},
-
-	{
-		"count": 1,
-		"speed": 50.0,
-		"spawn_delay": 0.2,
-		"boss": true
-	} 
-]
 
 func _ready():
 	start_waves()
 
+
 func start_waves():
+	while true:
+		wave_label.text = "WAVE " + str(current_wave)
 
-	for i in range(waves.size()):
+		var wave = generate_wave(current_wave)
 
-		var wave = waves[i]
-
-		wave_label.text = "WAVE " + str(i + 1)
-
-		await spawn_wave(wave, i)
+		await spawn_wave(wave, current_wave)
 
 		while get_tree().get_nodes_in_group("Enemy").size() > 0:
 			await get_tree().create_timer(0.5).timeout
-			
-		get_tree().current_scene.add_money(reward)
 
-		await get_tree().create_timer(0).timeout
+		get_tree().current_scene.add_money(reward + current_wave * 2)
 
-	get_tree().current_scene.show_you_win()
+		current_wave += 1
 
-func spawn_wave(wave, wave_index):
+		await get_tree().create_timer(2.0).timeout
 
+
+func generate_wave(wave_number: int) -> Dictionary:
+	var is_boss_wave = wave_number % 10 == 0
+
+	if is_boss_wave:
+		return {
+			"count": 1,
+			"speed": 45.0 + wave_number * 2,
+			"spawn_delay": 0.2,
+			"boss": true,
+			"health_bonus": wave_number * 20
+		}
+
+	return {
+		"count": 2 + wave_number * 2,
+		"speed": 35.0 + wave_number * 5,
+		"spawn_delay": max(1.8 - wave_number * 0.08, 0.35),
+		"boss": false,
+		"health_bonus": wave_number * 5
+	}
+
+
+func spawn_wave(wave: Dictionary, wave_number: int):
 	for i in range(wave["count"]):
-
 		var enemy
 
-		if wave.has("boss") and wave["boss"]:
+		if wave["boss"]:
 			enemy = boss_scene.instantiate()
 		else:
 			enemy = enemy_scene.instantiate()
@@ -111,12 +71,12 @@ func spawn_wave(wave, wave_index):
 
 		var body = enemy.get_child(0)
 
-		body.health += wave_index * 5
+		if body.has_method("set_health"):
+			body.set_health(body.health + wave["health_bonus"])
+		else:
+			body.health += wave["health_bonus"]
 
 		var selected_path = paths.pick_random()
-
 		selected_path.add_child(enemy)
 
-		await get_tree().create_timer(
-			wave["spawn_delay"]
-		).timeout
+		await get_tree().create_timer(wave["spawn_delay"]).timeout

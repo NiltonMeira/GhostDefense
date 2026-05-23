@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bea2mitwnu2lb" path="res://hero.tscn" id="5_7jktm"]
 [ext_resource type="PackedScene" uid="uid://mb78f2teuiyk" path="res://Boss1.tscn" id="5_eow3j"]
 [ext_resource type="Texture2D" uid="uid://bkyp1nqfv67v8" path="res://CoinGold.png" id="6_ryrav"]
+[ext_resource type="Texture2D" uid="uid://blxht215b0lbm" path="res://Heart.png" id="8_j5wjh"]
 
 [sub_resource type="Curve2D" id="Curve2D_7jktm"]
 _data = {
@@ -165,7 +166,7 @@ offset_right = 678.0
 offset_bottom = 343.0
 text = "Restart"
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=87056901]
+[node name="coin" type="Sprite2D" parent="." unique_id=87056901]
 position = Vector2(60.78118, 36.25)
 scale = Vector2(0.061168075, 0.048758857)
 texture = ExtResource("6_ryrav")
@@ -176,3 +177,15 @@ offset_top = 25.0
 offset_right = 133.0
 offset_bottom = 48.0
 text = "0.0"
+
+[node name="life" type="Sprite2D" parent="." unique_id=120862381]
+position = Vector2(158, 41)
+scale = Vector2(1.3124998, 1.1875001)
+texture = ExtResource("8_j5wjh")
+
+[node name="LifeLabel" type="Label" parent="." unique_id=1989849796]
+offset_left = 181.0
+offset_top = 23.0
+offset_right = 221.0
+offset_bottom = 46.0
+text = "100"

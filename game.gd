@@ -36,9 +36,9 @@ func _ready():
 	
 	continue_button.pressed.connect(resume_game)
 
-	quit_button.pressed.connect(quit_game)
-	game_over_quit_button.pressed.connect(quit_game)
-	you_win_quit_button.pressed.connect(quit_game)
+	quit_button.pressed.connect(go_to_menu)
+	game_over_quit_button.pressed.connect(go_to_menu)
+	you_win_quit_button.pressed.connect(go_to_menu)
 
 	pause_restart_button.pressed.connect(restart_game)
 	game_over_restart_button.pressed.connect(restart_game)
@@ -197,3 +197,7 @@ func update_money_label():
 func restart_game():
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+	
+func go_to_menu():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://main_menu.tscn")

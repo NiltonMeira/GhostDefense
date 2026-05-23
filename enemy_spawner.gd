@@ -9,15 +9,20 @@ extends Node2D
 ]
 
 @onready var wave_label = $"../WaveLabel"
-
 @export var reward: int = 25
+
+@export var player_life = 100
+@onready var life_label = $"../LifeLabel"
+@onready var game_over_label = $"../game_over"
 
 var current_wave: int = 1
 
 
 func _ready():
+	add_to_group("WaveManager")
+	update_player_life()
+	game_over_label.visible = false
 	start_waves()
-
 
 func start_waves():
 	while true:
@@ -51,10 +56,10 @@ func generate_wave(wave_number: int) -> Dictionary:
 
 	return {
 		"count": 2 + wave_number * 2,
-		"speed": 35.0 + wave_number * 5,
+		"speed": 50.0 + wave_number * 5,
 		"spawn_delay": max(1.8 - wave_number * 0.08, 0.35),
 		"boss": false,
-		"health_bonus": wave_number * 5
+		"health_bonus": wave_number * 0.5
 	}
 
 
@@ -80,3 +85,19 @@ func spawn_wave(wave: Dictionary, wave_number: int):
 		selected_path.add_child(enemy)
 
 		await get_tree().create_timer(wave["spawn_delay"]).timeout
+		
+func lose_life(amount: int = 1):
+	player_life -= amount
+	update_player_life()
+
+	if player_life <= 0:
+		gameover()
+	
+	
+func update_player_life():
+	life_label.text = str(player_life)
+	
+func gameover():
+	game_over_label.visible = true
+	get_tree().paused = true
+	
